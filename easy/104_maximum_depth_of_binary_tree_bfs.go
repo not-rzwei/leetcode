@@ -28,20 +28,20 @@ func maxDepth(root *TreeNode) int {
 	}
 
 	// Initialize the depth with 0
-	// And starts the stack with root node
+	// And starts the queue with root node
 	depth := 0
-	stack := []*NodeWithDepth{
+	queue := []*NodeWithDepth{
 		{
 			Node:  root,
 			Depth: 1,
 		},
 	}
 
-	// Loop until stack is empty
-	for len(stack) > 0 {
-		// Pop the node from stack
-		node := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
+	// Loop until queue is empty
+	for len(queue) > 0 {
+		// Shift the node from stack
+		node := queue[0]
+		queue = queue[1:len(queue)]
 
 		// Stop checking if it's node from a leaf
 		// Meaning it's nil
@@ -55,12 +55,12 @@ func maxDepth(root *TreeNode) int {
 
 		// Add node's children to stack regardless nil or not
 		// We have nil checking above
-		stack = append(stack, &NodeWithDepth{
+		queue = append(queue, &NodeWithDepth{
 			Node:  node.Node.Left,
 			Depth: 1 + node.Depth,
 		})
 
-		stack = append(stack, &NodeWithDepth{
+		queue = append(queue, &NodeWithDepth{
 			Node:  node.Node.Right,
 			Depth: 1 + node.Depth,
 		})
