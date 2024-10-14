@@ -1,0 +1,9 @@
+{
+    "leetcode.defaultLanguage": "golang",
+    "leetcode.filePath": {
+        "default": {
+            "folder": "",
+            "filename": "${difficulty}/${id}_${snake_case_name}.${ext}"
+        }
+    }
+}
