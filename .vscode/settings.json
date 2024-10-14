@@ -1,0 +1,4 @@
+{
+    "go.buildTags": "",
+    "debug.inlineValues": "on",
+}
