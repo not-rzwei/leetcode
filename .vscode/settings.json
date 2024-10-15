@@ -1,4 +1,6 @@
 {
     "go.buildTags": "",
+    "go.buildFlags": ["-v"],
+    "go.testTimeout": "3s",
     "debug.inlineValues": "on",
 }
