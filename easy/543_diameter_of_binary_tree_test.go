@@ -1,3 +1,6 @@
+//go:build iterative || dfs || dfs2
+// +build iterative dfs dfs2
+
 package easy
 
 import (
