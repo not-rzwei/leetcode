@@ -1,5 +1,5 @@
-//go:build ignore
-// +build ignore
+//go:build map
+// +build map
 
 /*
  * @lc app=leetcode id=1 lang=golang

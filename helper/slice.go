@@ -5,12 +5,12 @@ import (
 	"strings"
 )
 
-func SliceToString(arr []interface{}) string {
+func SliceToString[T any](arr []T) string {
 	var sb strings.Builder
 	sb.WriteString("[")
 
 	for i, v := range arr {
-		if v == nil {
+		if isNil(v) {
 			sb.WriteString("nil")
 		} else {
 			sb.WriteString(fmt.Sprintf("%v", v))
@@ -23,4 +23,8 @@ func SliceToString(arr []interface{}) string {
 
 	sb.WriteString("]")
 	return sb.String()
+}
+
+func isNil(v any) bool {
+	return v == nil
 }
