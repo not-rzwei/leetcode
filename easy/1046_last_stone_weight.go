@@ -32,10 +32,11 @@ func lastStoneWeight(stones []int) int {
 	// kinda sorted for at least 2 first elements
 	sortedStones := MaxHeap(stones)
 
+	// heapify the stones
+	heap.Init(&sortedStones)
+
 	// loop until we get only 1 stone from stone breakings
 	for len(sortedStones) > 1 {
-		// heapify the stones
-		heap.Init(&sortedStones)
 
 		// pop two biggest stones
 		y := heap.Pop(&sortedStones).(int)
