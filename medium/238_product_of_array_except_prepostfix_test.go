@@ -1,5 +1,5 @@
-//go:build prepostfix
-// +build prepostfix
+//go:build prepostfix || prepostfix_inplace
+// +build prepostfix prepostfix_inplace
 
 package medium
 
