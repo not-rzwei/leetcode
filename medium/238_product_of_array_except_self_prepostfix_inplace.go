@@ -22,7 +22,7 @@ result   1 | 1 | 2
 build postfix on result
 result[i] = postfix[i+1] x nums[i]
 nums     1 | 2 | 3
-result   1 | 1 | 2
+result   6 | 3 | 2
 
 **/
 
@@ -30,12 +30,14 @@ func productExceptSelf(nums []int) (result []int) {
 	n := len(nums)
 	result = make([]int, n)
 
-	prefixSum := 1
+	// calculate prefix product
+	prefix := 1
 	for i := 0; i < n; i++ {
-		result[i] = prefixSum
-		prefixSum *= nums[i]
+		result[i] = prefix
+		prefix *= nums[i]
 	}
 
+	// calculate postfix * prefix
 	postfixSum := 1
 	for i := n - 1; i >= 0; i-- {
 		result[i] *= postfixSum
