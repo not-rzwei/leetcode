@@ -1,3 +1,6 @@
+//go:build stack
+// +build stack
+
 /*
  * @lc app=leetcode id=150 lang=golang
  *
